@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+            background-image: url("https://img.freepik.com/premium-photo/blurred-college-library-bookshelves-classroom-blurry-focus_877191-2469.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            color: #333;
+            
+        }
+
+         .container {
+            margin-top: 190px;
+         }
+        
+        <!-- .container4 {
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+            margin-top: 200px;
+            text-align: center;
+            box-sizing: border-box;
+            box-shadow: #6c757d;
+            padding-left: 35%;
+            padding-right: 45%; /* Reduce padding for smaller input fields */
+            height: 36px; /* Decrease the height */
+            border-radius: 8px;
+            
+        } -->
+        .container1 {
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+            margin-top: 190px;
+            text-align: center;
+            box-sizing: border-box;
+            box-shadow: #6c757d;
+            padding-left: 35%;
+            padding-right: 45%; /* Reduce padding for smaller input fields */
+            height: 36px; /* Decrease the height */
+            border-radius: 8px;
+            
+        }
+        .container6{
+            margin-top: 50px;
+            margin-left: 60px;
+        }
+        
+        .container5{
+            margin-top: 60px;
+            display: flex;
+            height: 96vh;
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .container5 img{
+            width: 200px;
+            margin-top: 40px;
+            margin-left: 41rem;
+            height: 200px;
+        }
+        .column-box {
+            border: 2px solid #ddd;
+            padding: 40px;
+            margin-bottom: 30px;
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            margin-left: 10%;
+        }
+
+        .column-box:hover {
+            transform: scale(1.05);
+        }
+
+        .column-box h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #3d3d3d;
+        }
+
+        h1, h3 {
+            font-weight: 700;
+        }
+
+        .welcome-header {
+            text-align: center;
+            margin-top: 30px;
+            color: #3d3d3d;
+        }
+
+        .batch-button {
+            text-align: center;
+            margin: 15px 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .batch-button:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-primary {
+            background-color: #1e4b66;
+            border-color: #1e4b66;
+            margin-bottom: 0%;
+            margin-left: 500px;
+            margin-top: 120px ;
+        }
+        .btn-primary1 {
+            background-color: #1e4b66;
+            border-color: #1e4b66;
+            margin-right: 02px;
+
+        }
+        
+        .btn-primary1:hover {
+            background-color: #16384d;
+            border-color: #16384d;
+            
+        }
+
+
+        .btn-primary:hover {
+            background-color: #16384d;
+            border-color: #16384d;
+        }
+        .btn-secondary1 {
+            background-color: #6c757d;
+            border-color: #6c757d;
+            margin-left:900px;
+            margin-top: 150px;
+           
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+            margin-right: 500px;
+            margin-top: 120px ;
+           
+        }
+        .btn-secondary1:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+           
+            
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+            
+        }
+        .btn-secondary3 {
+            background-color: #6c757d;
+            border-color: #6c757d;
+            margin-left:10px;
+            margin-top: 400px;
+           
+        }
+        .btn-secondary3:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+            
+        }
+
+        .form-label {
+            font-weight: 600;
+        }
+
+        .form-control {
+            border-radius: 8px;
+            border-color: #ddd;
+        }
+
+        .list-group-item {
+            background-color: rgba(255, 255, 255, 0.1); /* Matches info-section */
+            color: #ffffff; /* White text */
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .list-group-item:hover {
+            background-color: #e9ecef;
+            cursor: pointer;
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+    <!-- First Page: Student Profile Login -->
+    <div class="container" id="login-page" >
+        <h1 class="text-center" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;">STUDENT PROFILE LOGIN</h1><br>
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <div class="column-box" onclick="openLoginPage('student')" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;">
+                    <h2>Student</h2>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="column-box" onclick="openLoginPage('officer')" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;">
+                    <h2>Placement Officer</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Page for Students and Officers -->
+    <center>
+    <div class="container1" id="student-login-page" style="display: none;">
+        <h1 class="text-center">Student Login</h1><br>
+        <form onsubmit="return handleLogin('student')">
+            <div class="mb-3">
+                <label for="student-email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="student-email" required>
+            </div>
+            <div class="mb-3">
+                <label for="student-password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="student-password" required>
+            </div>
+            <button type="submit" class="btn btn-primary1">Login</button>
+            
+        </form>
+    
+        <button type="button" class="btn btn-secondary1" onclick="goBack()">Back</button>
+    </div>
+
+
+    <div class="container1" id="officer-login-page" style="display: none;">
+        <h1 class="text-center">Placement Officer Login</h1><br>
+        <form onsubmit="return handleLogin('officer')">
+            <div class="mb-3">
+                <label for="officer-email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="officer-email" required>
+            </div>
+            <div class="mb-3">
+                <label for="officer-password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="officer-password" required>
+            </div>
+            <button type="submit" class="btn btn-primary1">Login</button>
+           
+        </form>
+        <button type="button" class="btn btn-secondary1" onclick="goBack()">Back</button>
+    </div>
+</center>
+
+    <!-- Welcome Page -->
+    <div class="container5" id="welcome-page" style="display:none ; ">
+        <h1 class="welcome-header">WELCOME <br> <br>COLLEGE PLACEMENT <br>STUDENT PROFILES</h1>
+        <img src="https://srishakthi.ac.in/wp-content/uploads/2024/02/cropped-fav-icon.webp"; style="display: flex;justify-content : center ;">
+        <div class="text-center">
+            <button class="btn btn-secondary" onclick="goBackToLogin()">Previous Page</button>
+            <button class="btn btn-primary" onclick="openBatchPage()">Next Page</button>
+        </div>
+    </div>
+
+    <!-- Batch Selection Page -->
+    <div class="container" id="batch-page" style="display: none;">
+        <h1 class="text-center">Select Batch</h1>
+        <div class="text-center mt-5">
+            <button class="btn btn-info batch-button" onclick="openDepartmentPage('2022-2026')">2022-2026</button><br>
+            <button class="btn btn-info batch-button" onclick="openDepartmentPage('2023-2027')">2023-2027</button><br>
+            <button class="btn btn-info batch-button" onclick="openDepartmentPage('2024-2028')">2024-2028</button><br>
+            <button class="btn btn-secondary3 mt-3" onclick="goBackToWelcome()">Back</button>
+        </div>
+    </div>
+
+    <!-- Department Page (For example, 2022-2026) -->
+    <div class="container6" id="department-page" style="display: none;">
+        <h1 class="text-center" id="batch-title"></h1>
+        <h3>Select Department</h3><br>
+        <ul class="list-group">
+            <li class="list-group-item"><a href="profilepage.html" onclick="openRegisterNumberPage('CSE')" style="color: black; text-decoration: none"><b>Computer Science Engineering</b></a></li>
+            <li class="list-group-item"><a href="#" onclick="openRegisterNumberPage('ECE')" style="color: black; text-decoration: none"><b>Elecrtical and Communication Engineering</b></a></li>
+            <li class="list-group-item"><a href="#" onclick="openRegisterNumberPage('MCE')" style="color: black; text-decoration: none"><b>Mechanical Engineering</b></a></li>
+            <li class="list-group-item"><a href="#" onclick="openRegisterNumberPage('EEE')" style="color: black; text-decoration: none"><b>Electrical and Electronics Engineering</b></a></li>
+            <li class="list-group-item"><a href="#" onclick="openRegisterNumberPage('CIVIL')" style="color: black; text-decoration: none"><b>Civil Engineering</b></a></li>
+            <li class="list-group-item"><a href="#" onclick="openRegisterNumberPage('BME')" style="color: black; text-decoration: none"><b>BioMedical Engineering</b></a></li>
+            <li class="list-group-item"><a href="#" onclick="openRegisterNumberPage('BTHECH')" style="color: black; text-decoration: none"><b>BioTech Engineering</b></a></li>
+            <li class="list-group-item"><a href="#" onclick="openRegisterNumberPage('AIDS')" style="color: black; text-decoration: none"><b>Arificial Intelligence and Data Science</b></a></li>
+            <li class="list-group-item"><a href="#" onclick="openRegisterNumberPage('AIML')" style="color: black; text-decoration: none"><b>Arificial Intelligence and Machine Learning</b></a></li>
+            <li class="list-group-item"><a href="#" onclick="openRegisterNumberPage('CYBER')" style="color: black; text-decoration: none"><b>Cyber Sceurity Engineering</b></a></li>
+        </ul>
+        <button class="btn btn-secondary mt-3" onclick="goBackToBatch()">Back</button>
+    </div>
+
+    <!-- Script to manage navigation -->
+    <script>
+        // Show the appropriate login page
+        function openLoginPage(userType) {
+            document.getElementById('login-page').style.display = 'none';
+            if (userType === 'student') {
+                document.getElementById('student-login-page').style.display = 'block';
+            } else if (userType === 'officer') {
+                document.getElementById('officer-login-page').style.display = 'block';
+            }
+        }
+
+        // Simulate login (replace with backend validation)
+        function handleLogin(userType) {
+            alert(userType + ' logged in successfully!');
+            document.getElementById('student-login-page').style.display = 'none';
+            document.getElementById('officer-login-page').style.display = 'none';
+            document.getElementById('welcome-page').style.display = 'block';
+            return false; // Prevent form submission
+        }
+
+        function openBatchPage() {
+            document.getElementById('welcome-page').style.display = 'none';
+            document.getElementById
+            document.getElementById('batch-page').style.display = 'block';
+        }
+
+        function openDepartmentPage(batch) {
+            document.getElementById('batch-page').style.display = 'none';
+            document.getElementById('department-page').style.display = 'block';
+            document.getElementById('batch-title').innerText = 'Batch ' + batch;
+        }
+
+        function openRegisterNumberPage(department) {
+            alert('You clicked ' + department + ' department. This would open register numbers page.');
+            // Redirect to the actual page for that department's register numbers (implement separately)
+        }
+
+        function goBack() {
+            document.getElementById('student-login-page').style.display = 'none';
+            document.getElementById('officer-login-page').style.display = 'none';
+            document.getElementById('login-page').style.display = 'block';
+        }
+
+        function goBackToLogin() {
+            document.getElementById('welcome-page').style.display = 'none';
+            document.getElementById('login-page').style.display = 'block';
+        }
+
+        function goBackToWelcome() {
+            document.getElementById('batch-page').style.display = 'none';
+            document.getElementById('welcome-page').style.display = 'block';
+        }
+
+        function goBackToBatch() {
+            document.getElementById('department-page').style.display = 'none';
+            document.getElementById('batch-page').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General Body Styling */
+        body {
+            background-color: #2c3e50; /* Dark background for contrast */
+            color: #ffffff; /* White text for readability */
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        h3 {
+            color: #f1c40f; /* Gold color for headers */
+        }
+
+        /* Styling for the student list */
+        .list-group-item {
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+            color: #ffffff; /* White text */
+            border: none;
+            margin-bottom: 5px;
+            border-radius: 8px;
+            padding: 10px 15px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .list-group-item:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Slightly lighter background on hover */
+            transform: scale(1.02); /* Subtle scaling effect */
+        }
+
+        .list-group-item a {
+            text-decoration: none;
+            color: #ffffff; /* Maintain white text color */
+        }
+
+        .list-group-item a:hover {
+            color: #3498db; /* Bright blue hover effect */
+        }
+
+        /* Student Profile Section */
+        .student-photo {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 50%;
+            margin: auto;
+            display: block;
+            border: 3px solid #ddd;
+        }
+
+        .info-section {
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.1); /* Semi-transparent light overlay */
+            color: #ffffff; /* White text inside info-section */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            color: #f1c40f; /* Gold for title text */
+        }
+
+        .btn-primary4 {
+            background-color: #3498db; /* Bright blue */
+            border-color: #3498db;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary4:hover {
+            background-color: #2980b9; /* Slightly darker blue on hover */
+        }
+
+        @media (max-width: 768px) {
+            .info-section {
+                font-size: 0.9rem;
+            }
+
+            .student-photo {
+                max-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+        <!-- Student List Section -->
+        <div id="student-list-section" class="mt-4">
+            <h1 class="text-center" id="department-title"></h1>
+            <h3 class="text-center mb-4">Student List</h3>
+            <ul id="student-list" class="list-group">
+                <!-- Student list will be dynamically inserted here -->
+            </ul>
+            <button class="btn btn-primary4 mt-4" onclick="goBackToDepartment()">Back to Departments</button>
+        </div>
+
+        <!-- Student Profile Section -->
+        <div id="student-profile-section" class="mt-4" style="display: none;">
+            <h3 class="text-center mb-4">Profile</h3>
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <img id="student-photo" class="student-photo" src="https://via.placeholder.com/150" alt="Student Photo">
+                </div>
+                <div class="col-md-8">
+                    <div class="info-section">
+                        <p class="info-title">Personal Details</p>
+                        <p><strong>Register Number:</strong> <span id="student-regno"></span></p>
+                        <p><strong>Name:</strong> <span id="student-name"></span></p>
+                        <p><strong>Address:</strong> <span id="student-address"></span></p>
+                        <p><strong>Date of Birth:</strong> <span id="student-dob"></span></p>
+                        <p><strong>Marks:</strong> <span id="student-marks"></span></p>
+                        <p><strong>Skills:</strong> <span id="student-skills"></span></p>
+                        <ul id="student-cgpa-semester"></ul>
+                        <p><strong>Average CGPA:</strong> <span id="average-cgpa"></span></p>
+                    </div>
+
+                    <div class="info-section mt-4">
+                        <p class="info-title">Projects</p>
+                        <ul id="student-projects"></ul>
+                    </div>
+
+                    <div class="info-section mt-4">
+                        <p class="info-title">Certificates</p>
+                        <ul id="skills-certifications"></ul>
+                    </div>
+
+                    <div class="info-section mt-4">
+                        <p class="info-title">LinkedIn</p>
+                        <p><a id="student-linkedin" href="#" target="_blank">View LinkedIn Profile</a></p>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary4 mt-4" onclick="goBackToStudents()">Back to Students</button>
+        </div>
+    </div>
+
+    <script>
+        // Sample student data
+        const students = [
+        {
+            regNo: 'CSE714023104001',
+            name: 'Abinaya K',
+            photo: 'ABN.jpg',
+            address: '214, Nehru Main Street, Chennai-641 602.',
+            dob: '2005-01-15',
+            marks: '85%',
+            skills: ['Python', 'SQL'],
+            cgpa: '8.5',
+            cgpaSemester: [8.1, 8.3, 8.4, 8.6, 8.7, 8.8, 9.0, 9.2],
+            projects: [{ name: 'AI Chatbot', link: '#' }],
+            certificates: [{ name: 'Python', link: '#' }],
+            linkedin: 'https://www.linkedin.com/in/abinaya-k'
+        },
+        ];
+
+        // Populate student list dynamically
+        const studentList = document.getElementById('student-list');
+        students.forEach(student => {
+            const listItem = document.createElement('li');
+            listItem.className = 'list-group-item';
+            listItem.innerHTML = `
+                <a href="#" onclick="showProfile('${student.regNo}')" class="text-decoration-none">
+                    ${student.regNo} - ${student.name}
+                </a>`;
+            studentList.appendChild(listItem);
+        });
+
+        // Show student profile
+        function showProfile(regNo) {
+            const student = students.find(s => s.regNo === regNo);
+            if (!student) return;
+
+            document.getElementById('student-photo').src = student.photo;
+            document.getElementById('student-regno').textContent = student.regNo;
+            document.getElementById('student-name').textContent = student.name;
+            document.getElementById('student-address').textContent = student.address;
+            document.getElementById('student-dob').textContent = student.dob;
+            document.getElementById('student-marks').textContent = student.marks;
+            document.getElementById('student-skills').textContent = student.skills.join(', ');
+            document.getElementById('average-cgpa').textContent = student.cgpa;
+
+            const cgpaList = document.getElementById('student-cgpa-semester');
+            cgpaList.innerHTML = '';
+            student.cgpaSemester.forEach((cgpa, index) => {
+                const li = document.createElement('li');
+                li.textContent = `Semester ${index + 1}: ${cgpa}`;
+                cgpaList.appendChild(li);
+            });
+
+            const projectsList = document.getElementById('student-projects');
+            projectsList.innerHTML = '';
+            student.projects.forEach(project => {
+                const li = document.createElement('li');
+                li.innerHTML = `<a href="${project.link}">${project.name}</a>`;
+                projectsList.appendChild(li);
+            });
+
+            const certificatesList = document.getElementById('skills-certifications');
+            certificatesList.innerHTML = '';
+            student.certificates.forEach(cert => {
+                const li = document.createElement('li');
+                li.innerHTML = `<a href="${cert.link}">${cert.name}</a>`;
+                certificatesList.appendChild(li);
+            });
+
+            const linkedinProfile = document.getElementById('student-linkedin');
+            linkedinProfile.href = student.linkedin;
+            linkedinProfile.textContent = student.linkedin;
+
+            document.getElementById('student-list-section').style.display = 'none';
+            document.getElementById('student-profile-section').style.display = 'block';
+        }
+
+        // Go back to the student list
+        function goBackToStudents() {
+            document.getElementById('student-list-section').style.display = 'block';
+            document.getElementById('student-profile-section').style.display = 'none';
+        }
+
+        // Back to departments (Placeholder function)
+        function goBackToDepartment() {
+            alert("Navigate back to departments (Implement as needed).");
+        }
+    </script>
+</body>
+</html>
